@@ -45,19 +45,19 @@
     button{border:none;cursor:pointer;font-family:inherit;background:none}
 
     /* ── Container ── */
-    .container{max-width:1280px;margin:0 auto;padding:0 24px}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
     /* ── Badge ── */
     .badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-head);font-size:.68rem;letter-spacing:.15em;color:var(--c-primary);text-transform:uppercase;margin-bottom:14px}
     .badge::before{content:'';display:block;width:22px;height:2px;background:currentColor;flex-shrink:0}
 
     /* ── Section headings ── */
-    .section-title{font-family:var(--f-body);font-weight:900;font-size:clamp(1.9rem,3.5vw,3.2rem);line-height:1.12;color:var(--c-dark)}
+    .section-title{font-family:var(--f-body);font-weight:900;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.12;color:var(--c-dark)}
     .section-title .accent{color:var(--c-primary)}
     .section-sub{font-size:1rem;color:var(--c-muted);line-height:1.75;max-width:580px}
 
     /* ── Buttons ── */
-    .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 32px;border-radius:8px;font-family:var(--f-head);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;transition:var(--t);cursor:pointer;white-space:nowrap;font-weight:400}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 32px;border-radius:8px;font-family:var(--f-head);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;transition:var(--t);cursor:pointer;white-space:nowrap;font-weight:400}
     .btn-blue{background:var(--c-primary);color:#fff;box-shadow:0 4px 20px var(--c-glow)}
     .btn-blue:hover{background:var(--c-primary-dark);transform:translateY(-2px);box-shadow:0 10px 32px var(--c-glow)}
     .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}
@@ -74,46 +74,47 @@
     /* ════════════════════════════
        TOP BAR
     ════════════════════════════ */
-    .topbar{background:var(--c-dark2);height:var(--topbar-h);display:flex;align-items:center;border-bottom:1px solid rgba(4,70,241,.25);position:relative;z-index:100;overflow:hidden}
-    .topbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .tb-contacts{display:flex;align-items:center;gap:20px}
-    .tb-contacts a{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--c-gray);transition:var(--t)}
-    .tb-contacts a i{color:var(--c-primary);font-size:.7rem}
-    .tb-contacts a:hover{color:var(--c-accent)}
-    .tb-socials{display:flex;align-items:center;gap:8px}
+    .topbar{background:var(--c-dark2);height:var(--topbar-h);display:flex;align-items:center;border-bottom:1px solid rgba(4,70,241,.15);position:relative;z-index:100}
+    .topbar .container{display:flex;align-items:center;justify-content:flex-end;width:100%}
+    .tb-socials{display:flex;align-items:center;gap:12px}
     .tb-socials span{font-size:.75rem;color:var(--c-muted);font-family:var(--f-head);letter-spacing:.05em}
-    .soc-btn{width:28px;height:28px;border-radius:50%;background:rgba(4,70,241,.2);color:var(--c-accent);display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:var(--t)}
+    .soc-btn{width:28px;height:28px;border-radius:50%;background:rgba(4,70,241,.15);color:var(--c-accent);display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:var(--t)}
     .soc-btn:hover{background:var(--c-primary);color:#fff;transform:scale(1.15)}
 
     /* ════════════════════════════
        NAVBAR
     ════════════════════════════ */
-    #navbar{position:sticky;top:0;z-index:999;height:var(--nav-h);background:var(--c-white);box-shadow:0 2px 20px rgba(0,0,0,.07);transition:background var(--t),box-shadow var(--t)}
+    #navbar{position:sticky;top:0;z-index:999;background:var(--c-white);box-shadow:0 2px 20px rgba(0,0,0,.07);transition:background var(--t),box-shadow var(--t);display:flex;align-items:center}
     #navbar.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(4,70,241,.12)}
-    .nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    #navbar .container{width:100%}
+    .nav-wrap{padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .nav-logo{display:flex;align-items:center;gap:13px;flex-shrink:0}
     .logo-icon{width:46px;height:46px;flex-shrink:0}
     .logo-text{display:flex;flex-direction:column}
     .logo-name{font-family:var(--f-head);font-size:1.05rem;letter-spacing:.12em;color:var(--c-dark);line-height:1}
-    .logo-sub{font-size:.55rem;color:var(--c-muted);letter-spacing:.09em;text-transform:uppercase}
-    .nav-links{display:flex;align-items:center;gap:2px}
-    .nav-links a{padding:8px 15px;font-size:.87rem;font-weight:600;color:var(--c-dark);border-radius:8px;transition:var(--t);position:relative}
-    .nav-links a::after{content:'';position:absolute;left:15px;right:15px;bottom:4px;height:2px;background:var(--c-primary);transform:scaleX(0);transition:var(--t);border-radius:2px}
+    .logo-sub{font-size:.55rem;color:var(--c-muted);letter-spacing:.09em;text-transform:uppercase;margin-top:3px}
+    
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links li{display:flex;align-items:center}
+    .nav-links a{padding:8px 15px;font-size:.87rem;font-weight:600;color:var(--c-dark);border-radius:8px;transition:var(--t);position:relative;display:inline-flex;align-items:center}
+    .nav-links a::after{content:'';position:absolute;left:15px;right:15px;bottom:2px;height:2px;background:var(--c-primary);transform:scaleX(0);transition:var(--t);border-radius:2px}
     .nav-links a:hover{color:var(--c-primary)}
     .nav-links a:hover::after{transform:scaleX(1)}
-    .nav-cta{background:var(--c-primary)!important;color:#fff!important;font-family:var(--f-head);font-size:.68rem!important;letter-spacing:.08em;padding:11px 22px!important;border-radius:8px;flex-shrink:0}
+    .nav-cta{background:var(--c-primary)!important;color:#fff!important;font-family:var(--f-head);font-size:.68rem!important;letter-spacing:.08em;padding:11px 22px!important;border-radius:8px;flex-shrink:0;box-shadow:0 4px 14px var(--c-glow)}
     .nav-cta::after{display:none!important}
-    .nav-cta:hover{background:var(--c-primary-dark)!important;box-shadow:0 4px 18px var(--c-glow);transform:translateY(-1px)}
-    .nav-burger{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer}
-    .nav-burger span{display:block;width:26px;height:2px;background:var(--c-dark);border-radius:2px;transition:var(--t)}
+    .nav-cta:hover{background:var(--c-primary-dark)!important;box-shadow:0 6px 20px var(--c-glow);transform:translateY(-1px)}
+    
+    .nav-burger{display:none;flex-direction:column;gap:5px;padding:10px 8px;cursor:pointer;align-items:center;justify-content:center;height:44px;width:44px;border-radius:8px;transition:var(--t);border:none;background:none;outline:none}
+    .nav-burger span{display:block;width:24px;height:2px;background:var(--c-dark);border-radius:2px;transition:var(--t)}
     .nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .nav-burger.open span:nth-child(2){opacity:0}
     .nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    .mobile-nav{display:none;position:fixed;top:calc(var(--topbar-h) + var(--nav-h));left:0;right:0;background:#fff;padding:20px 24px;box-shadow:0 20px 50px rgba(0,0,0,.12);z-index:998;flex-direction:column;gap:6px}
+    
+    .mobile-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;padding:20px 24px;box-shadow:0 20px 50px rgba(0,0,0,.12);z-index:998;flex-direction:column;gap:6px;border-top:1px solid rgba(0,0,0,.05)}
     .mobile-nav.open{display:flex}
     .mobile-nav a{padding:12px 16px;font-weight:600;font-size:.95rem;border-radius:8px;transition:var(--t)}
     .mobile-nav a:hover{background:var(--c-surface);color:var(--c-primary)}
-    .mob-cta{background:var(--c-primary);color:#fff!important;text-align:center;margin-top:8px;font-family:var(--f-head);font-size:.72rem;letter-spacing:.08em;border-radius:8px}
+    .mob-cta{background:var(--c-primary);color:#fff!important;text-align:center;margin-top:8px;font-family:var(--f-head);font-size:.72rem;letter-spacing:.08em;border-radius:8px;padding:14px!important}
 
     /* ════════════════════════════
        HERO
@@ -152,10 +153,11 @@
     .srv-tab i{color:var(--c-primary);transition:var(--t)}
     .srv-tab:hover,.srv-tab.active{background:var(--c-primary);color:#fff;border-color:var(--c-primary);box-shadow:0 5px 20px var(--c-glow)}
     .srv-tab:hover i,.srv-tab.active i{color:#fff}
-    .srv-panel{display:none;grid-template-columns:1fr 1fr;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,.09)}
+    
+    .srv-panel{display:none;grid-template-columns:1.1fr 0.9fr;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,.09);align-items:stretch}
     .srv-panel.active{display:grid}
-    .srv-img{width:100%;height:440px;object-fit:cover}
-    .srv-body{padding:52px 44px 52px 0;display:flex;flex-direction:column;justify-content:center}
+    .srv-img{width:100%;height:100%;min-height:440px;object-fit:cover}
+    .srv-body{padding:60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
     .srv-body h3{font-size:1.9rem;font-weight:800;margin-bottom:16px}
     .srv-body p{color:var(--c-muted);line-height:1.8;font-size:.97rem;margin-bottom:30px}
 
@@ -163,13 +165,16 @@
        ABOUT
     ════════════════════════════ */
     #about{padding:100px 0;background:#fff}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .about-photos{position:relative;height:570px}
-    .aphoto-main{position:absolute;top:0;left:0;width:72%;height:74%;object-fit:cover;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.22)}
-    .aphoto-sec{position:absolute;bottom:0;right:0;width:58%;height:54%;object-fit:cover;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.22);border:5px solid #fff}
-    .aphoto-badge{position:absolute;top:48%;left:52%;transform:translate(-50%,-50%);background:var(--c-primary);border-radius:14px;padding:18px 22px;text-align:center;box-shadow:0 10px 40px var(--c-glow);min-width:120px;z-index:2}
+    .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center}
+    .about-photos{position:relative;height:520px;display:flex;align-items:center;justify-content:center}
+    .aphoto-main{position:absolute;top:0;left:0;width:75%;z-index:1;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+    .aphoto-sec{position:absolute;bottom:0;right:0;width:50%;z-index:2;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);border:5px solid #fff}
+    .aphoto-third{position:absolute;top:20%;right:10%;width:40%;z-index:3;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);border:5px solid #fff}
+    
+    .aphoto-badge{position:absolute;top:48%;left:52%;transform:translate(-50%,-50%);background:var(--c-primary);border-radius:14px;padding:18px 22px;text-align:center;box-shadow:0 10px 40px var(--c-glow);min-width:120px;z-index:10}
     .aphoto-badge .num{font-family:var(--f-head);font-size:2.2rem;color:#fff;line-height:1}
     .aphoto-badge .lbl{font-size:.68rem;color:rgba(255,255,255,.8);letter-spacing:.06em;margin-top:4px}
+    
     .about-text p{color:var(--c-muted);line-height:1.82;font-size:.98rem;margin-bottom:18px}
     .about-text strong{color:var(--c-primary);font-weight:700}
     .about-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
@@ -184,14 +189,14 @@
     ════════════════════════════ */
     #gallery{padding:100px 0;background:var(--c-surface)}
     .gallery-hd{text-align:center;margin-bottom:50px}
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .g-item{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;cursor:zoom-in}
+    .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .g-item{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/10;cursor:zoom-in;box-shadow:0 8px 30px rgba(0,0,0,.06)}
     .g-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
-    .g-item:hover img{transform:scale(1.08)}
-    .g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,70,241,.88) 0%,transparent 60%);opacity:0;transition:opacity var(--t);display:flex;align-items:flex-end;padding:22px}
+    .g-item:hover img{transform:scale(1.06)}
+    .g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,70,241,.88) 0%,transparent 60%);opacity:0;transition:opacity var(--t);display:flex;align-items:flex-end;padding:24px}
     .g-item:hover .g-overlay{opacity:1}
-    .g-overlay h4{color:#fff;font-weight:700;font-size:.95rem}
-    .g-overlay span{color:rgba(255,255,255,.75);font-size:.78rem}
+    .g-overlay h4{color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:4px}
+    .g-overlay span{color:rgba(255,255,255,.85);font-size:.82rem}
 
     /* ════════════════════════════
        TECHNOLOGY
@@ -203,108 +208,91 @@
     .tech-hd .badge{color:var(--c-accent)}
     .tech-hd .badge::before{background:var(--c-accent)}
     .tech-hd .section-sub{color:var(--c-muted);margin:0 auto}
-    .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-    .tech-card{padding:38px 26px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);transition:var(--t);position:relative;overflow:hidden}
-    .tech-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c-primary);transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
-    .tech-card:hover{background:rgba(4,70,241,.1);border-color:rgba(4,70,241,.28);transform:translateY(-7px);box-shadow:0 24px 50px rgba(4,70,241,.14)}
-    .tech-card:hover::after{transform:scaleX(1)}
-    .tech-icon-box{width:54px;height:54px;border-radius:14px;background:rgba(4,70,241,.18);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--c-accent);margin-bottom:24px;transition:var(--t)}
-    .tech-card:hover .tech-icon-box{background:var(--c-primary);color:#fff}
-    .tech-card h3{font-family:var(--f-head);font-size:.85rem;color:#fff;letter-spacing:.06em;margin-bottom:12px}
-    .tech-card p{font-size:.87rem;color:var(--c-muted);line-height:1.72}
+    
+    .tech-layout{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:30px;align-items:center}
+    .tech-col{display:flex;flex-direction:column;gap:30px}
+    .tech-card-v2{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:32px 28px;border-radius:16px;transition:var(--t)}
+    .tech-card-v2:hover{background:rgba(4,70,241,.08);border-color:rgba(4,70,241,.25);transform:translateY(-5px);box-shadow:0 15px 35px rgba(4,70,241,.1)}
+    .tech-icon-box{width:50px;height:50px;border-radius:12px;background:rgba(4,70,241,.15);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--c-accent);margin-bottom:20px;transition:var(--t)}
+    .tech-card-v2:hover .tech-icon-box{background:var(--c-primary);color:#fff}
+    .tech-card-v2 h3{font-family:var(--f-head);font-size:.85rem;color:#fff;letter-spacing:.06em;margin-bottom:12px}
+    .tech-card-v2 p{font-size:.87rem;color:var(--c-muted);line-height:1.72}
+    .tech-center{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .tech-center-img{width:100%;max-width:320px;height:auto;animation:floatRig 4s ease-in-out infinite}
+    @keyframes floatRig{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    .tech-center-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:20px;padding:14px 30px;background:var(--c-primary);color:#fff;font-family:var(--f-head);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;box-shadow:0 4px 20px var(--c-glow);transition:var(--t)}
+    .tech-center-btn:hover{background:var(--c-primary-dark);transform:translateY(-2px);box-shadow:0 10px 32px var(--c-glow)}
 
     /* ════════════════════════════
-       STATS
-    ════════════════════════════ */
-    #stats{padding:80px 0;background:var(--c-primary);position:relative;overflow:hidden}
-    #stats::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E")}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;position:relative}
-    .stat-item{text-align:center}
-    .stat-num{font-family:var(--f-head);font-size:clamp(2.5rem,5vw,4rem);color:#fff;line-height:1;margin-bottom:10px}
-    .stat-num .plus{color:var(--c-accent)}
-    .stat-lbl{font-size:.9rem;color:rgba(255,255,255,.72);font-weight:500}
-
-    /* ════════════════════════════
-       TESTIMONIALS
-    ════════════════════════════ */
-    #testimonials{padding:100px 0;background:#fff}
-    .test-hd{text-align:center;margin-bottom:60px}
-    .test-slider{overflow:hidden}
-    .test-track{display:flex;transition:transform .5s var(--ease)}
-    .test-card{flex:0 0 calc(33.333% - 11px);margin:0 8px;background:var(--c-surface);border-radius:24px;padding:38px 30px;position:relative;overflow:hidden;transition:var(--t)}
-    .test-card::before{content:'"';position:absolute;top:16px;right:24px;font-size:6rem;color:var(--c-primary);opacity:.08;font-family:serif;line-height:1}
-    .test-card:hover{background:var(--c-primary);transform:translateY(-6px);box-shadow:0 24px 60px var(--c-glow)}
-    .test-card:hover .test-txt,.test-card:hover .t-name,.test-card:hover .t-co{color:rgba(255,255,255,.88)!important}
-    .test-card:hover .test-stars{color:rgba(255,255,255,.6)}
-    .test-stars{color:#FBBF24;display:flex;gap:3px;margin-bottom:14px}
-    .test-txt{font-size:.94rem;line-height:1.78;color:var(--c-dark);margin-bottom:24px;transition:var(--t)}
-    .test-author{display:flex;align-items:center;gap:12px}
-    .test-avatar{width:44px;height:44px;border-radius:50%;background:var(--c-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--f-head);font-size:.85rem;flex-shrink:0}
-    .t-name{font-weight:700;font-size:.9rem;color:var(--c-dark);transition:var(--t)}
-    .t-co{font-size:.78rem;color:var(--c-muted);transition:var(--t)}
-    .test-nav{display:flex;justify-content:center;gap:12px;margin-top:40px}
-    .test-nav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--c-primary);color:var(--c-primary);font-size:.95rem;transition:var(--t)}
-    .test-nav button:hover{background:var(--c-primary);color:#fff}
-
-    /* ════════════════════════════
-       CTA BAND
-    ════════════════════════════ */
-    #cta{padding:100px 0;background:var(--c-dark2);position:relative;overflow:hidden}
-    #cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(4,70,241,.14) 0%,transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(0,196,255,.06) 0%,transparent 60%)}
-    .cta-inner{position:relative;text-align:center;max-width:720px;margin:0 auto}
-    .cta-inner h2{font-family:var(--f-head);font-size:clamp(1.7rem,3vw,2.7rem);color:#fff;letter-spacing:.02em;margin-bottom:18px}
-    .cta-inner p{color:var(--c-gray);font-size:1rem;margin-bottom:38px;line-height:1.7}
-    .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-    .cta-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-head);font-size:.68rem;letter-spacing:.15em;color:var(--c-accent);text-transform:uppercase;margin-bottom:14px;justify-content:center}
-    .cta-badge::before{content:'';display:block;width:22px;height:2px;background:var(--c-accent);flex-shrink:0}
-
-    /* ════════════════════════════
-       CONTACT
+       TESTIMONIALS & CONTACT (COMBINED)
     ════════════════════════════ */
     #contact{padding:100px 0;background:var(--c-surface)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
-    .contact-left h2{font-size:2.1rem;font-weight:900;margin-bottom:14px}
-    .contact-left>p{color:var(--c-muted);line-height:1.75;margin-bottom:40px}
-    .ci-list{display:flex;flex-direction:column;gap:20px}
-    .ci{display:flex;align-items:center;gap:16px}
-    .ci-icon{width:48px;height:48px;border-radius:14px;background:var(--c-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0}
-    .ci-lbl{font-size:.72rem;color:var(--c-muted);text-transform:uppercase;letter-spacing:.06em}
-    .ci-val{font-weight:700;color:var(--c-dark);font-size:.94rem}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+    
+    .test-slider-v2{background:var(--c-white);border-radius:24px;padding:40px;position:relative;margin-top:20px;box-shadow:0 8px 30px rgba(0,0,0,.04);border:1px solid rgba(4,70,241,.06)}
+    .q-mark{width:46px;height:auto;margin-bottom:20px;opacity:.8}
+    .test-text-v2{font-size:1rem;line-height:1.75;color:var(--c-dark);margin-bottom:28px;font-style:italic}
+    .test-user-v2{display:flex;align-items:center;gap:15px}
+    .test-avatar-v2{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(4,70,241,.2)}
+    .test-name-v2{font-weight:700;font-size:1rem;color:var(--c-dark)}
+    .test-stars-v2{color:#FBBF24;font-size:.85rem;margin-top:4px}
+    
     .form-box{background:#fff;border-radius:24px;padding:48px;box-shadow:0 12px 50px rgba(0,0,0,.06)}
-    .form-box h3{font-weight:800;font-size:1.3rem;margin-bottom:28px}
     .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .fg{margin-bottom:18px}
     .fg label{display:block;font-size:.78rem;font-weight:700;color:var(--c-dark);margin-bottom:7px;letter-spacing:.04em}
     .fg input,.fg select,.fg textarea{width:100%;padding:13px 16px;border:2px solid #E4EAF5;border-radius:10px;font-size:.9rem;color:var(--c-dark);outline:none;transition:border-color var(--t),box-shadow var(--t);background:#fff}
     .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--c-primary);box-shadow:0 0 0 4px var(--c-glow)}
     .fg textarea{height:118px;resize:vertical}
-    .form-submit{width:100%;padding:16px;background:var(--c-primary);color:#fff;border-radius:10px;font-family:var(--f-head);font-size:.74rem;letter-spacing:.1em;cursor:pointer;transition:var(--t);display:flex;align-items:center;justify-content:center;gap:10px}
+    
+    .services-checkboxes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 20px}
+    .cb-label{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--c-dark);cursor:pointer;user-select:none}
+    .cb-label input{display:none}
+    .cb-custom{width:18px;height:18px;border:2px solid #E4EAF5;border-radius:5px;position:relative;transition:var(--t);flex-shrink:0;background:#fff}
+    .cb-label input:checked + .cb-custom{background:var(--c-primary);border-color:var(--c-primary)}
+    .cb-label input:checked + .cb-custom::after{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:#fff;font-size:.6rem;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+    
+    .form-submit{width:100%;padding:16px;background:var(--c-primary);color:#fff;border-radius:10px;font-family:var(--f-head);font-size:.74rem;letter-spacing:.1em;cursor:pointer;transition:var(--t);display:flex;align-items:center;justify-content:center;gap:10px;border:none}
     .form-submit:hover{background:var(--c-primary-dark);transform:translateY(-2px);box-shadow:0 10px 28px var(--c-glow)}
     .form-submit.sent{background:#10B981}
 
     /* ════════════════════════════
        FOOTER
     ════════════════════════════ */
-    footer{background:var(--c-dark);padding:80px 0 0}
-    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:64px}
-    .fbrand-logo{display:flex;align-items:center;gap:13px;margin-bottom:20px}
-    .footer-brand p{font-size:.87rem;color:var(--c-muted);line-height:1.72;margin-bottom:24px}
-    .f-socials{display:flex;gap:10px}
-    .f-soc{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.05);color:var(--c-muted);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:var(--t)}
-    .f-soc:hover{background:var(--c-primary);color:#fff}
-    .footer-col h4{font-family:var(--f-head);font-size:.72rem;letter-spacing:.18em;color:#fff;text-transform:uppercase;margin-bottom:22px}
-    .fl{display:flex;flex-direction:column;gap:10px}
-    .fl a{font-size:.87rem;color:var(--c-muted);display:flex;align-items:center;gap:8px;transition:var(--t)}
-    .fl a::before{content:'→';font-size:.72rem;color:var(--c-primary)}
-    .fl a:hover{color:var(--c-accent);transform:translateX(4px)}
-    .fci{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-    .fci i{color:var(--c-primary);font-size:.88rem;margin-top:3px;flex-shrink:0}
-    .fci span{font-size:.85rem;color:var(--c-muted);line-height:1.55}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:26px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .footer-bottom p{font-size:.82rem;color:var(--c-muted)}
+    footer{background:var(--c-dark);padding:0}
+    .footer-news{background:#0a0f1d;padding:60px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+    .news-wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+    .news-text{max-width:450px}
+    .news-text h4{font-family:var(--f-head);font-size:1.15rem;color:#fff;letter-spacing:.05em;line-height:1.4}
+    .news-text p{color:var(--c-muted);font-size:.9rem;margin-top:6px}
+    .news-form{display:flex;gap:12px;width:100%;max-width:480px;flex-shrink:0}
+    .news-form input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:12px 16px;color:#fff;outline:none;transition:var(--t)}
+    .news-form input:focus{border-color:var(--c-primary);background:rgba(255,255,255,.07)}
+    .news-form button{padding:12px 24px;background:var(--c-primary);color:#fff;font-family:var(--f-head);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;transition:var(--t);border:none;cursor:pointer}
+    .news-form button:hover{background:var(--c-primary-dark)}
+    
+    .f-widgets{padding:70px 0}
+    .f-logo-box{text-align:center;margin-bottom:40px}
+    .fbrand-logo{display:inline-flex;align-items:center;gap:13px;margin-bottom:15px}
+    .f-logo-box p{color:var(--c-muted);font-size:.95rem;max-width:400px;margin:0 auto;line-height:1.6}
+    
+    .f-contacts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:40px}
+    .fc-box{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:26px 22px;display:flex;align-items:center;gap:16px;text-align:left}
+    .fc-icon{width:46px;height:46px;border-radius:50%;background:rgba(4,70,241,.15);color:var(--c-accent);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}
+    .fc-text{display:flex;flex-direction:column;gap:4px}
+    .fc-text h6{color:#fff;font-size:.9rem;font-weight:600;line-height:1.45}
+    
+    .f-map-container{border-radius:16px;overflow:hidden;height:320px;border:1px solid rgba(255,255,255,.06);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+    .f-map-container iframe{width:100%;height:100%;border:none}
+    
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding:30px 0;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .footer-bottom p{font-size:.85rem;color:var(--c-muted);line-height:1.5}
     .fb-links{display:flex;gap:20px}
-    .fb-links a{font-size:.82rem;color:var(--c-muted);transition:var(--t)}
+    .fb-links a{font-size:.85rem;color:var(--c-muted);transition:var(--t)}
     .fb-links a:hover{color:var(--c-accent)}
+    .f-social-col{display:flex;gap:10px}
+    .f-soc-v2{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.04);color:var(--c-muted);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:var(--t)}
+    .f-soc-v2:hover{background:var(--c-primary);color:#fff;transform:scale(1.1)}
 
     /* WhatsApp FAB */
     .wa-fab{position:fixed;bottom:28px;right:28px;z-index:9000;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 4px 24px rgba(37,211,102,.42);transition:var(--t);animation:pfab 2.5s infinite}
@@ -320,13 +308,23 @@
        RESPONSIVE
     ════════════════════════════ */
     @media(max-width:1200px){
-      .tech-grid{grid-template-columns:repeat(2,1fr)}
-      .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+      .tech-layout{grid-template-columns:1fr 1.1fr 1fr;gap:20px}
+    }
+    @media(max-width:992px){
+      .tech-layout{grid-template-columns:1fr;gap:40px}
+      .tech-center{order:-1}
+      .tech-center-img{max-width:280px}
+      .contact-grid{grid-template-columns:1fr;gap:48px}
+      .f-contacts-grid{grid-template-columns:1fr;gap:16px}
+      .footer-bottom{flex-direction:column;text-align:center;gap:20px}
+      .fb-links{justify-content:center}
+      .f-social-col{justify-content:center}
     }
     @media(max-width:900px){
       .nav-links{display:none}
       .nav-burger{display:flex}
       .srv-panel.active{grid-template-columns:1fr}
+<<<<<<< HEAD
       .srv-img{height:300px;width:100%}
       .srv-body{padding:32px 28px}
       .about-grid{grid-template-columns:1fr;gap:48px}
@@ -336,12 +334,19 @@
       .stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
       .test-card{flex:0 0 calc(50% - 11px)}
       .contact-grid{grid-template-columns:1fr;gap:48px}
+=======
+      .srv-img{height:300px;width:100%;min-height:auto}
+      .srv-body{padding:32px 28px}
+      .about-grid{grid-template-columns:1fr;gap:48px}
+      .about-photos{height:400px}
+>>>>>>> a9d6408 (Apply final redesign to match Cravatec aesthetic, add ViaCEP integration, and fix responsive issues)
       .form-box{padding:32px 24px}
       .hero-actions{flex-direction:column;gap:10px}
       .hero-actions .btn{width:100%;justify-content:center}
     }
     @media(max-width:600px){
       .topbar{display:none}
+<<<<<<< HEAD
       .gallery-grid{grid-template-columns:1fr}
       .about-cards{grid-template-columns:1fr 1fr}
       .test-card{flex:0 0 calc(100% - 11px)}
@@ -357,11 +362,30 @@
       .srv-tabs{gap:6px}
       .srv-tab{padding:9px 14px;font-size:.8rem}
       .cta-inner h2{font-size:1.6rem}
+=======
+      .mobile-nav{top:var(--nav-h)}
+      .gallery-grid{grid-template-columns:1fr}
+      .about-cards{grid-template-columns:1fr 1fr}
+      .frow{grid-template-columns:1fr}
+      .scroll-hint{display:none}
+      .hero-title{font-size:2rem}
+      #services{padding:60px 0}
+      #about,#gallery,#technology,#contact{padding:70px 0}
+      .srv-tabs{gap:6px}
+      .srv-tab{padding:9px 14px;font-size:.8rem}
+      .logo-icon{width:38px;height:38px}
+      .logo-name{font-size:.92rem}
+      .logo-sub{font-size:.5rem}
+      .services-checkboxes{grid-template-columns:1fr}
+>>>>>>> a9d6408 (Apply final redesign to match Cravatec aesthetic, add ViaCEP integration, and fix responsive issues)
     }
     @media(max-width:380px){
       .about-cards{grid-template-columns:1fr}
       .hero-title{font-size:1.75rem}
+<<<<<<< HEAD
       .stat-num{font-size:2.2rem}
+=======
+>>>>>>> a9d6408 (Apply final redesign to match Cravatec aesthetic, add ViaCEP integration, and fix responsive issues)
     }
   </style>
 </head>
@@ -370,15 +394,9 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
-    <div class="tb-contacts">
-      <a href="tel:+5500000000000"><i class="fas fa-phone"></i>(00) 0000-0000</a>
-      <a href="mailto:contato@concretaengenharia.com.br"><i class="fas fa-envelope"></i>contato@concretaengenharia.com.br</a>
-    </div>
     <div class="tb-socials">
       <span>Siga-nos!</span>
-      <a href="#" class="soc-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="soc-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="soc-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/cravatec.com.br" class="soc-btn" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 </div>
@@ -514,69 +532,69 @@
 <section id="services">
   <div class="container">
     <div class="srv-hd reveal">
-      <div class="badge">INOVAÇÃO E EXCELÊNCIA EM</div>
-      <h2 class="section-title">Engenharia e Construção</h2>
+      <div class="badge">Inovação e Alta Tecnologia em</div>
+      <h2 class="section-title">Estacas e Fundações</h2>
     </div>
 
     <div class="srv-tabs reveal">
-      <button class="srv-tab active" data-tab="fundacoes"><i class="fas fa-building"></i>Fundações</button>
-      <button class="srv-tab" data-tab="estruturas"><i class="fas fa-drafting-compass"></i>Estruturas</button>
-      <button class="srv-tab" data-tab="gerenciamento"><i class="fas fa-tasks"></i>Gerenciamento</button>
-      <button class="srv-tab" data-tab="projetos"><i class="fas fa-ruler-combined"></i>Projetos</button>
-      <button class="srv-tab" data-tab="consultoria"><i class="fas fa-user-tie"></i>Consultoria</button>
-      <button class="srv-tab" data-tab="laudos"><i class="fas fa-file-signature"></i>Laudos</button>
+      <button class="srv-tab active" data-tab="fundacoes"><i class="fa fa-home"></i>Fundações</button>
+      <button class="srv-tab" data-tab="absorcao"><i class="fa fa-water"></i>Ensaio de Absorção</button>
+      <button class="srv-tab" data-tab="sondagem"><i class="fa fa-tractor"></i>Sondagem de Solo</button>
+      <button class="srv-tab" data-tab="geotecnico"><i class="fa fa-earth"></i>Projeto Geotécnico</button>
+      <button class="srv-tab" data-tab="estacas"><i class="fa fa-cogs"></i>Estacas</button>
+      <button class="srv-tab" data-tab="engenharia"><i class="fa fa-hard-hat"></i>Engenharia</button>
     </div>
 
     <div class="srv-panel active reveal" id="tab-fundacoes">
-      <img class="srv-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Fundações em engenharia" loading="lazy">
+      <img class="srv-img" src="https://www.cravatec.com.br/admin/assets/imgs/servico/media/a742213923381178e9f5c268e5167467-1.jpeg" alt="Fundações" loading="lazy">
       <div class="srv-body">
         <h3>Fundações</h3>
-        <p>Desenvolvemos projetos de fundação sob medida para atender às necessidades específicas de cada cliente. Nossa abordagem técnica garante uma base sólida, segura e durável para qualquer tipo de construção, desde residências a grandes empreendimentos comerciais e industriais.</p>
+        <p>Desenvolvemos projetos de fundação sob medida para atender às necessidades específicas de cada cliente. Nossa abordagem personalizada garante uma base sólida para o sucesso de qualquer construção.</p>
         <a href="#contact" class="btn btn-blue">ORÇAMENTO GRÁTIS</a>
       </div>
     </div>
 
-    <div class="srv-panel" id="tab-estruturas">
-      <img class="srv-img" src="https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?w=900&q=80" alt="Estruturas de concreto" loading="lazy">
+    <div class="srv-panel" id="tab-absorcao">
+      <img class="srv-img" src="https://www.cravatec.com.br/admin/assets/imgs/servico/media/c561065813130c6c6f5dce74e2b35653-prod.jpeg" alt="Ensaio de Absorção" loading="lazy">
       <div class="srv-body">
-        <h3>Estruturas de Concreto</h3>
-        <p>Projetamos e executamos estruturas em concreto armado e protendido com alta precisão técnica. Nossa equipe qualificada garante segurança, durabilidade e desempenho em todas as estruturas, seguindo rigorosamente as normas ABNT vigentes.</p>
+        <h3>Ensaio de Absorção</h3>
+        <p>Nosso ensaio de absorção de solo fornece uma avaliação abrangente da capacidade de absorção do solo em sua área. Através da medição da taxa de absorção de água pelo solo, podemos determinar sua permeabilidade e capacidade de drenagem. Essas informações são cruciais para o planejamento de sistemas de drenagem eficazes, controle de erosão e prevenção de problemas de inundação. Com nossos serviços de ensaio de absorção de solo, você pode garantir uma gestão sustentável e eficiente da água em seu projeto ou propriedade.</p>
         <a href="#contact" class="btn btn-blue">ORÇAMENTO GRÁTIS</a>
       </div>
     </div>
 
-    <div class="srv-panel" id="tab-gerenciamento">
-      <img class="srv-img" src="https://images.unsplash.com/photo-1590012314253-3bc5e91b1e43?w=900&q=80" alt="Gerenciamento de obras" loading="lazy">
+    <div class="srv-panel" id="tab-sondagem">
+      <img class="srv-img" src="https://www.cravatec.com.br/admin/assets/imgs/servico/media/78bcf2b0f8680828c922713d6ae984a1-prod.jpeg" alt="Sondagem de Solo" loading="lazy">
       <div class="srv-body">
-        <h3>Gerenciamento de Obras</h3>
-        <p>Oferecemos serviços completos de gerenciamento e acompanhamento de obras, garantindo o cumprimento de prazos, orçamentos e padrões de qualidade. Nossa metodologia minimiza riscos e maximiza eficiência em todas as etapas.</p>
+        <h3>Sondagem de Solo</h3>
+        <p>Nossa sondagem de solo oferece uma análise detalhada e precisa das características do solo em seu local de construção. Utilizando técnicas avançadas de perfuração e amostragem, nossa equipe de especialistas coleta dados essenciais sobre a composição do solo, profundidade do lençol freático e outras informações relevantes. Esses dados são fundamentais para o planejamento e projeto de estruturas seguras e eficientes, permitindo que você tome decisões informadas durante o desenvolvimento do seu projeto.</p>
         <a href="#contact" class="btn btn-blue">ORÇAMENTO GRÁTIS</a>
       </div>
     </div>
 
-    <div class="srv-panel" id="tab-projetos">
-      <img class="srv-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80" alt="Projetos estruturais" loading="lazy">
+    <div class="srv-panel" id="tab-geotecnico">
+      <img class="srv-img" src="https://www.cravatec.com.br/admin/assets/imgs/servico/media/3ad67d82a5559c55fc9993b1d5e8832c-prod.jpeg" alt="Projeto Geotécnico" loading="lazy">
       <div class="srv-body">
-        <h3>Projetos Estruturais</h3>
-        <p>Elaboramos projetos estruturais completos com toda documentação técnica para aprovação nos órgãos competentes. Utilizamos softwares avançados como BIM, SAP2000 e ETABS para análise e dimensionamento de máxima precisão.</p>
+        <h3>Projeto Geotécnico</h3>
+        <p>Desenvolvemos projetos geotécnicos completos e especializados: Fundação em sapata; Fundação em bloco; Fundação em estaca raiz; Fundação em estaca hélice contínua; Contenção em estaca; Muro de arrimo de gravidade; Muro de arrimo em concreto armado.</p>
         <a href="#contact" class="btn btn-blue">ORÇAMENTO GRÁTIS</a>
       </div>
     </div>
 
-    <div class="srv-panel" id="tab-consultoria">
-      <img class="srv-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80" alt="Consultoria técnica" loading="lazy">
+    <div class="srv-panel" id="tab-estacas">
+      <img class="srv-img" src="https://www.cravatec.com.br/admin/assets/imgs/servico/media/8d437dc1e98d95a020947f553c057643-2.jpeg" alt="Estacas" loading="lazy">
       <div class="srv-body">
-        <h3>Consultoria Técnica</h3>
-        <p>Prestamos consultoria especializada em engenharia civil, auxiliando empresas e particulares em decisões técnicas assertivas. Analisamos situações complexas e apresentamos soluções eficientes e economicamente viáveis.</p>
+        <h3>Estacas</h3>
+        <p>Utilizamos tecnologia de ponta em nossas estacas e fundações para garantir eficiência, durabilidade e segurança superiores. Nossos métodos avançados estão na vanguarda do setor de engenharia estrutural.</p>
         <a href="#contact" class="btn btn-blue">ORÇAMENTO GRÁTIS</a>
       </div>
     </div>
 
-    <div class="srv-panel" id="tab-laudos">
-      <img class="srv-img" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=900&q=80" alt="Laudos e perícias" loading="lazy">
+    <div class="srv-panel" id="tab-engenharia">
+      <img class="srv-img" src="https://www.cravatec.com.br/admin/assets/imgs/servico/media/dbda9d80220532e9110fbc0e107f8e6f-prod.jpeg" alt="Engenharia" loading="lazy">
       <div class="srv-body">
-        <h3>Laudos e Perícias Técnicas</h3>
-        <p>Elaboramos laudos técnicos, relatórios periciais e inspeções prediais com rigor técnico e imparcialidade. Nossos engenheiros são habilitados pelo CREA para emissão de ART, atuando também como assistentes técnicos em processos judiciais.</p>
+        <h3>Engenharia</h3>
+        <p>Oferecemos consultoria especializada em fundações para orientar nossos clientes em cada etapa do processo. Nossa equipe de engenheiros altamente qualificados está pronta para fornecer insights valiosos e soluções eficazes.</p>
         <a href="#contact" class="btn btn-blue">ORÇAMENTO GRÁTIS</a>
       </div>
     </div>
@@ -588,8 +606,9 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-photos reveal from-left">
-        <img class="aphoto-main" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Engenheiro especialista" loading="lazy">
-        <img class="aphoto-sec" src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=600&q=80" alt="Obras em andamento" loading="lazy">
+        <img class="aphoto-main" src="https://www.cravatec.com.br/template/images/resource/about4-7.png" alt="Máquina Concreta" loading="lazy">
+        <img class="aphoto-sec" src="https://www.cravatec.com.br/template/images/resource/about4-8.png" alt="Obras Concreta" loading="lazy">
+        <img class="aphoto-third" src="https://www.cravatec.com.br/template/images/resource/about4-9.png" alt="Qualidade Concreta" loading="lazy">
         <div class="aphoto-badge">
           <div class="num">10<span style="color:var(--c-accent)">+</span></div>
           <div class="lbl">Anos de<br>Experiência</div>
@@ -598,11 +617,11 @@
 
       <div class="reveal from-right">
         <div class="badge">CONCRETA</div>
-        <h2 class="section-title" style="margin-bottom:20px">Sua parceira em<br>Engenharia e Construção!</h2>
+        <h2 class="section-title" style="margin-bottom:20px">Sua empresa de Fundações e Estacas!</h2>
         <div class="about-text">
-          <p>Fundada com paixão e compromisso com a excelência, a <strong>Concreta Engenharia</strong> se destaca como referência no setor de engenharia estrutural e construção civil. Nossa jornada começou com a missão de fornecer soluções técnicas sólidas e confiáveis para projetos de todos os portes.</p>
-          <p>Com uma equipe altamente qualificada e um histórico comprovado de sucesso, a <strong>Concreta</strong> é a escolha natural para clientes que buscam qualidade, eficiência e inovação. Nosso compromisso é refletido em cada projeto, do planejamento até a entrega final.</p>
-          <p>Valorizamos a confiança de nossos clientes e nos empenhamos em superar suas expectativas. Com foco incansável na satisfação e em resultados excepcionais, a <strong>Concreta</strong> é a parceira ideal para suas necessidades de engenharia.</p>
+          <p>Fundada com paixão e compromisso com a excelência há mais de 10 anos, a <strong>Concreta</strong> se destaca como referência no setor de engenharia estrutural, estacas e fundações. Nossa jornada começou com a missão de fornecer soluções técnicas sólidas e confiáveis para projetos de todos os portes.</p>
+          <p>Com uma equipe altamente qualificada e um histórico comprovado de sucesso, a <strong>Concreta</strong> é a escolha natural para clientes que buscam qualidade, eficiência e inovação em estacas escavadas, estacas hélice, estacas raiz e estacas Strauss. Nosso compromisso é refletido em cada projeto, do planejamento até a entrega final.</p>
+          <p>Valorizamos a confiança de nossos clientes e nos empenhamos em superar suas expectativas. Com foco incansável na satisfação e em resultados excepcionais, a <strong>Concreta</strong> é a parceira ideal para suas necessidades de engenharia estrutural e fundações.</p>
         </div>
         <div class="about-cards">
           <div class="about-card">
@@ -627,12 +646,13 @@
 <section id="gallery">
   <div class="container">
     <div class="gallery-hd reveal">
-      <div class="badge">NOSSOS SERVIÇOS APLICADOS EM</div>
+      <div class="badge">Nossos Serviços Aplicados em</div>
       <h2 class="section-title" style="margin-bottom:12px">Projetos Reais</h2>
       <p class="section-sub" style="margin:0 auto">Conheça alguns dos projetos que realizamos com excelência técnica e comprometimento com a qualidade em cada detalhe.</p>
     </div>
     <div class="gallery-grid reveal">
       <div class="g-item">
+<<<<<<< HEAD
         <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=75" alt="Fundação em radier" loading="lazy">
         <div class="g-overlay"><div><h4>Fundação em Radier</h4><span>Projeto Estrutural</span></div></div>
       </div>
@@ -655,6 +675,22 @@
       <div class="g-item">
         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=75" alt="Complexo comercial" loading="lazy">
         <div class="g-overlay"><div><h4>Complexo Comercial</h4><span>Estruturas Especiais</span></div></div>
+=======
+        <img src="https://www.cravatec.com.br/admin/assets/imgs/portfolio/grande/14022b7a0d4c82c3c9fb605bb16e6bb2-prod.jpeg" alt="Estacas em execução" loading="lazy">
+        <div class="g-overlay"><div><h4>Estacas de Hélice Contínua</h4><span>Sorocaba/SP</span></div></div>
+      </div>
+      <div class="g-item">
+        <img src="https://www.cravatec.com.br/admin/assets/imgs/portfolio/grande/d151c8db1821cfdfc63a563f4581f144-prod.jpeg" alt="Sondagem e ensaios" loading="lazy">
+        <div class="g-overlay"><div><h4>Sondagem e Ensaio de Solo</h4><span>Votorantim/SP</span></div></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=75" alt="Trabalho geotécnico" loading="lazy">
+        <div class="g-overlay"><div><h4>Projeto Geotécnico Executivo</h4><span>Campinas/SP</span></div></div>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=75" alt="Estacas Strauss" loading="lazy">
+        <div class="g-overlay"><div><h4>Estacas Strauss em Condomínio</h4><span>São Paulo/SP</span></div></div>
+>>>>>>> a9d6408 (Apply final redesign to match Cravatec aesthetic, add ViaCEP integration, and fix responsive issues)
       </div>
     </div>
   </div>
@@ -664,202 +700,143 @@
 <section id="technology">
   <div class="container">
     <div class="tech-hd reveal">
-      <div class="badge">CONCRETA É INOVAÇÃO</div>
-      <h2 class="section-title" style="margin-bottom:14px">Tecnológica</h2>
-      <p class="section-sub">Utilizamos as mais modernas tecnologias e metodologias para entregar projetos com máxima precisão, eficiência e segurança.</p>
+      <div class="badge">CONCRETA TECNOLOGIA</div>
+      <h2 class="section-title" style="margin-bottom:14px">Inovação e Qualidade</h2>
+      <p class="section-sub">Unimos equipamentos de última geração a uma equipe técnica altamente qualificada para garantir a segurança e a precisão do seu projeto geotécnico.</p>
     </div>
-    <div class="tech-grid">
-      <div class="tech-card reveal d1">
-        <div class="tech-icon-box"><i class="fas fa-drafting-compass"></i></div>
-        <h3>BIM &amp; CAD 3D</h3>
-        <p>Modelagem em Building Information Modeling e AutoCAD para máxima precisão, coordenação e detalhamento técnico de todos os projetos.</p>
+    
+    <div class="tech-layout">
+      <!-- Col 1 -->
+      <div class="tech-col reveal from-left">
+        <div class="tech-card-v2">
+          <div class="tech-icon-box"><i class="fas fa-award"></i></div>
+          <h3>Qualidade nos Serviços</h3>
+          <p>Prezamos pela qualidade de nossos serviços prestados, assegurando resultados precisos e duradouros para todas as fundações.</p>
+        </div>
+        <div class="tech-card-v2">
+          <div class="tech-icon-box"><i class="fas fa-microchip"></i></div>
+          <h3>Tecnologia de Ponta</h3>
+          <p>Utilizamos equipamentos de alta tecnologia e de última geração para execução de estacas e ensaios de solo.</p>
+        </div>
       </div>
-      <div class="tech-card reveal d2">
-        <div class="tech-icon-box"><i class="fas fa-cubes"></i></div>
-        <h3>Análise Estrutural</h3>
-        <p>Softwares avançados como SAP2000, ETABS e CYPECAD para análise e dimensionamento de estruturas seguras e otimizadas.</p>
+      
+      <!-- Col 2 -->
+      <div class="tech-center reveal">
+        <img class="tech-center-img" src="https://www.cravatec.com.br/template/images/resource/service4-3.png" alt="Equipamento de Geotecnia" loading="lazy">
+        <a href="#contact" class="tech-center-btn">Fazer Orçamento</a>
       </div>
-      <div class="tech-card reveal d3">
-        <div class="tech-icon-box"><i class="fas fa-chart-line"></i></div>
-        <h3>Gestão Integrada</h3>
-        <p>Plataformas digitais de gerenciamento para acompanhamento em tempo real de cronogramas, custos e qualidade da obra.</p>
-      </div>
-      <div class="tech-card reveal d4">
-        <div class="tech-icon-box"><i class="fas fa-shield-alt"></i></div>
-        <h3>Qualidade &amp; Normas</h3>
-        <p>Processos rigorosos de controle de qualidade seguindo as normas ABNT, com emissão de ART e total conformidade técnica.</p>
+      
+      <!-- Col 3 -->
+      <div class="tech-col reveal from-right">
+        <div class="tech-card-v2">
+          <div class="tech-icon-box"><i class="fas fa-user-friends"></i></div>
+          <h3>Profissionais Qualificados</h3>
+          <p>Nossa equipe técnica conta com profissionais de grande experiência e prontos para atender as demandas do seu projeto.</p>
+        </div>
+        <div class="tech-card-v2">
+          <div class="tech-icon-box"><i class="fas fa-calendar-check"></i></div>
+          <h3>Compromisso com Prazos</h3>
+          <p>Temos total compromisso e seriedade na entrega de nossos serviços, minimizando atrasos na sua obra.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num"><span class="counter" data-target="10">0</span><span class="plus">+</span></div>
-        <div class="stat-lbl">Anos de Experiência</div>
-      </div>
-      <div class="stat-item reveal d1">
-        <div class="stat-num"><span class="counter" data-target="150">0</span><span class="plus">+</span></div>
-        <div class="stat-lbl">Projetos Concluídos</div>
-      </div>
-      <div class="stat-item reveal d2">
-        <div class="stat-num"><span class="counter" data-target="98">0</span><span class="plus">%</span></div>
-        <div class="stat-lbl">Clientes Satisfeitos</div>
-      </div>
-      <div class="stat-item reveal d3">
-        <div class="stat-num"><span class="counter" data-target="20">0</span><span class="plus">+</span></div>
-        <div class="stat-lbl">Engenheiros Especializados</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="test-hd reveal">
-      <div class="badge">DEPOIMENTOS</div>
-      <h2 class="section-title">O que nossos clientes dizem</h2>
-    </div>
-    <div class="test-slider reveal">
-      <div class="test-track" id="testTrack">
-
-        <div class="test-card">
-          <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="test-txt">"A Concreta Engenharia superou todas as nossas expectativas. O projeto foi entregue no prazo, com qualidade impecável e dentro do orçamento previsto. Equipe extremamente profissional e comprometida com cada detalhe."</p>
-          <div class="test-author">
-            <div class="test-avatar">RM</div>
-            <div><div class="t-name">Ricardo Moreira</div><div class="t-co">Construtora Moreira &amp; Filhos</div></div>
-          </div>
-        </div>
-
-        <div class="test-card">
-          <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="test-txt">"Excelente empresa! Contratamos a Concreta para o gerenciamento de nossa obra e o resultado foi fantástico. Acompanhamento constante, comunicação clara e soluções rápidas para cada desafio."</p>
-          <div class="test-author">
-            <div class="test-avatar">AS</div>
-            <div><div class="t-name">Ana Silva</div><div class="t-co">Incorporadora Silva &amp; Assoc.</div></div>
-          </div>
-        </div>
-
-        <div class="test-card">
-          <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="test-txt">"A consultoria técnica da Concreta foi fundamental para nosso projeto. Identificaram problemas que outros passaram despercebidos e apresentaram soluções eficientes com ótimo custo-benefício."</p>
-          <div class="test-author">
-            <div class="test-avatar">JP</div>
-            <div><div class="t-name">João Paulo</div><div class="t-co">JP Investimentos Imobiliários</div></div>
-          </div>
-        </div>
-
-        <div class="test-card">
-          <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="test-txt">"Contratamos a Concreta para os laudos técnicos do nosso edifício e ficamos muito satisfeitos com a competência da equipe. Relatório muito completo e tecnicamente bem fundamentado."</p>
-          <div class="test-author">
-            <div class="test-avatar">CF</div>
-            <div><div class="t-name">Carla Ferreira</div><div class="t-co">Condomínio Residencial Aurora</div></div>
-          </div>
-        </div>
-
-        <div class="test-card">
-          <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="test-txt">"Parceria de longa data com a Concreta. Sempre entregam projetos de altíssima qualidade, com equipe técnica atualizada e tecnologias modernas. Parceiros de confiança absoluta!"</p>
-          <div class="test-author">
-            <div class="test-avatar">MO</div>
-            <div><div class="t-name">Marcos Oliveira</div><div class="t-co">Grupo Constru-Max</div></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="test-nav">
-      <button id="prevTest" aria-label="Anterior"><i class="fas fa-arrow-left"></i></button>
-      <button id="nextTest" aria-label="Próximo"><i class="fas fa-arrow-right"></i></button>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="container">
-    <div class="cta-inner reveal">
-      <div class="cta-badge">PRONTO PARA COMEÇAR?</div>
-      <h2>Construa o Futuro<br>com a Gente</h2>
-      <p>Entre em contato e solicite seu orçamento gratuito. Nossa equipe de especialistas está pronta para transformar seu projeto em realidade com excelência e precisão.</p>
-      <div class="cta-btns">
-        <a href="#contact" class="btn btn-blue"><i class="fas fa-file-alt"></i>SOLICITAR ORÇAMENTO</a>
-        <a href="https://wa.me/5500000000000" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>FALAR NO WHATSAPP</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
+<!-- TESTIMONIALS & CONTACT (COMBINED) -->
 <section id="contact">
   <div class="container">
     <div class="contact-grid">
-      <div class="reveal from-left">
-        <div class="badge">FALE CONOSCO</div>
-        <h2 class="contact-left" style="font-size:2.1rem;font-weight:900;margin-bottom:14px;color:var(--c-dark)">Entre em<br>Contato</h2>
-        <p class="section-sub" style="margin-bottom:40px">Estamos prontos para atender você. Solicite seu orçamento e nossa equipe entrará em contato em até 24 horas úteis.</p>
-        <div class="ci-list">
-          <div class="ci">
-            <div class="ci-icon"><i class="fas fa-phone"></i></div>
-            <div><div class="ci-lbl">TELEFONE</div><div class="ci-val">(00) 0000-0000</div></div>
-          </div>
-          <div class="ci">
-            <div class="ci-icon"><i class="fab fa-whatsapp"></i></div>
-            <div><div class="ci-lbl">WHATSAPP</div><div class="ci-val">(00) 00000-0000</div></div>
-          </div>
-          <div class="ci">
-            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-            <div><div class="ci-lbl">E-MAIL</div><div class="ci-val">contato@concretaengenharia.com.br</div></div>
-          </div>
-          <div class="ci">
-            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div><div class="ci-lbl">ENDEREÇO</div><div class="ci-val">Rua das Engenharias, 123 — Centro</div></div>
+      <!-- Left: Testimonials -->
+      <div class="reveal from-left" style="align-self: center;">
+        <div class="badge">DEPOIMENTO</div>
+        <h2 class="section-title" style="margin-bottom:20px; color:var(--c-dark);">O que dizem nossos clientes</h2>
+        <p class="section-sub" style="margin-bottom:30px;">A satisfação de quem constrói com segurança e inovação técnica é o nosso maior objetivo.</p>
+        
+        <div class="test-slider-v2">
+          <img class="q-mark" src="https://www.cravatec.com.br/template/images/resource/question-mark.png" alt="Quotes" loading="lazy">
+          <p class="test-text-v2">"Trabalhar com a Concreta foi uma excelente experiência. Eles demonstraram grande profissionalismo, entregando as estacas e fundações rigorosamente dentro do prazo e com excelente controle tecnológico."</p>
+          <div class="test-user-v2">
+            <img class="test-avatar-v2" src="https://www.cravatec.com.br/admin/assets/imgs/depoimento/pequena/911cc14a878f725e9102b067b38eb4ee-5.jpeg" alt="Eng. Maurício Ramos" loading="lazy">
+            <div>
+              <div class="test-name-v2">Eng. Maurício Ramos</div>
+              <div class="test-stars-v2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Right: Contact Form -->
       <div class="form-box reveal from-right">
-        <h3>Solicite seu Orçamento</h3>
+        <h3 style="font-weight: 800; font-size: 1.4rem; margin-bottom: 24px;">Solicite seu Orçamento</h3>
         <form id="contactForm">
           <div class="frow">
             <div class="fg">
               <label for="f-name">Nome Completo *</label>
-              <input type="text" id="f-name" placeholder="Seu nome completo" required>
+              <input type="text" id="f-name" placeholder="Seu nome" required>
             </div>
             <div class="fg">
-              <label for="f-phone">Telefone / WhatsApp *</label>
+              <label for="f-phone">WhatsApp *</label>
               <input type="tel" id="f-phone" placeholder="(00) 00000-0000" required>
             </div>
           </div>
-          <div class="fg">
-            <label for="f-email">E-mail *</label>
-            <input type="email" id="f-email" placeholder="seu@email.com.br" required>
+          <div class="frow">
+            <div class="fg">
+              <label for="f-email">E-mail *</label>
+              <input type="email" id="f-email" placeholder="seu@email.com" required>
+            </div>
+            <div class="fg">
+              <label for="f-cep">CEP *</label>
+              <input type="text" id="f-cep" placeholder="00000-000" maxlength="9" required>
+            </div>
           </div>
-          <div class="fg">
-            <label for="f-service">Serviço Desejado</label>
-            <select id="f-service">
-              <option value="">Selecione um serviço...</option>
-              <option>Fundações</option>
-              <option>Estruturas de Concreto</option>
-              <option>Gerenciamento de Obras</option>
-              <option>Projetos Estruturais</option>
-              <option>Consultoria Técnica</option>
-              <option>Laudos e Perícias Técnicas</option>
-              <option>Outro serviço</option>
-            </select>
+          <div class="frow">
+            <div class="fg" style="grid-column: span 2;">
+              <label for="f-address">Endereço / Cidade / Estado *</label>
+              <input type="text" id="f-address" placeholder="Preenchido automaticamente pelo CEP" required>
+            </div>
           </div>
+          
+          <label style="display:block; font-size:.78rem; font-weight:700; color:var(--c-dark); margin-bottom:10px; letter-spacing:.04em;">Quais serviços você necessita?</label>
+          <div class="services-checkboxes">
+            <label class="cb-label">
+              <input type="checkbox" name="srv" value="Fundações" checked>
+              <div class="cb-custom"></div>
+              <span>Fundações</span>
+            </label>
+            <label class="cb-label">
+              <input type="checkbox" name="srv" value="Ensaio de Absorção">
+              <div class="cb-custom"></div>
+              <span>Ensaio de Absorção</span>
+            </label>
+            <label class="cb-label">
+              <input type="checkbox" name="srv" value="Sondagem de Solo">
+              <div class="cb-custom"></div>
+              <span>Sondagem de Solo</span>
+            </label>
+            <label class="cb-label">
+              <input type="checkbox" name="srv" value="Projeto Geotécnico">
+              <div class="cb-custom"></div>
+              <span>Projeto Geotécnico</span>
+            </label>
+            <label class="cb-label">
+              <input type="checkbox" name="srv" value="Estacas">
+              <div class="cb-custom"></div>
+              <span>Estacas</span>
+            </label>
+            <label class="cb-label">
+              <input type="checkbox" name="srv" value="Outros Serviços">
+              <div class="cb-custom"></div>
+              <span>Outros</span>
+            </label>
+          </div>
+
           <div class="fg">
-            <label for="f-msg">Mensagem</label>
-            <textarea id="f-msg" placeholder="Descreva seu projeto, dúvidas ou necessidades..."></textarea>
+            <label for="f-msg">Mensagem / Detalhes da obra</label>
+            <textarea id="f-msg" placeholder="Descreva sua obra, dimensões do terreno, etc..."></textarea>
           </div>
           <button type="submit" class="form-submit" id="fBtn">
-            <i class="fas fa-paper-plane"></i>ENVIAR MENSAGEM
+            <i class="fas fa-paper-plane"></i>ENVIAR ORÇAMENTO
           </button>
         </form>
       </div>
@@ -869,9 +846,26 @@
 
 <!-- FOOTER -->
 <footer>
+  <!-- Newsletter row -->
+  <div class="footer-news">
+    <div class="container">
+      <div class="news-wrap">
+        <div class="news-text">
+          <h4>Inscreva-se em nossa Newsletter</h4>
+          <p>Receba dicas técnicas, novidades e atualizações sobre engenharia e fundações.</p>
+        </div>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Seu e-mail profissional" required aria-label="E-mail profissional">
+          <button type="submit">Inscrever</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
+    <div class="f-widgets">
+      <!-- Logo brand center -->
+      <div class="f-logo-box">
         <div class="fbrand-logo">
           <svg width="42" height="42" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
             <polygon points="60,10 104,33 60,56 16,33" fill="#3B6FF3"/>
@@ -879,64 +873,65 @@
             <polygon points="16,33 16,79 60,102 60,56" fill="#0330B8"/>
             <polygon points="60,24 88,38 60,52 32,38" fill="rgba(4,10,32,0.35)"/>
           </svg>
-          <div>
+          <div style="text-align: left;">
             <div style="font-family:var(--f-head);color:#fff;font-size:1rem;letter-spacing:.12em">CONCRETA</div>
             <div style="font-size:.55rem;color:var(--c-muted);letter-spacing:.09em;text-transform:uppercase">Engenharia e Serviços Ltda.</div>
           </div>
         </div>
-        <p>Excelência em engenharia estrutural e construção civil. Transformamos projetos em realidade com qualidade, segurança e inovação. Construa o futuro com a gente.</p>
-        <div class="f-socials">
-          <a href="#" class="f-soc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="f-soc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="f-soc" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="f-soc" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <p>Mais de uma década de excelência técnica no setor de estacas, fundações, projetos geotécnicos e ensaios de solo. Tecnologia e precisão a serviço do seu futuro.</p>
+      </div>
+
+      <!-- Widgets row -->
+      <div class="f-contacts-grid">
+        <div class="fc-box">
+          <div class="fc-icon"><i class="fas fa-phone"></i></div>
+          <div class="fc-text">
+            <h6>TELEFONES</h6>
+            <a href="tel:+551530421234" style="color:var(--c-muted); font-size:.85rem;">(15) 3042-1234</a>
+            <a href="https://wa.me/5515996123456" target="_blank" style="color:var(--c-muted); font-size:.85rem;">(15) 99612-3456 (WhatsApp)</a>
+          </div>
+        </div>
+        <div class="fc-box">
+          <div class="fc-icon"><i class="fas fa-envelope"></i></div>
+          <div class="fc-text">
+            <h6>E-MAIL</h6>
+            <a href="mailto:contato@concretaengenharia.com.br" style="color:var(--c-muted); font-size:.85rem;">contato@concretaengenharia.com.br</a>
+          </div>
+        </div>
+        <div class="fc-box">
+          <div class="fc-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="fc-text">
+            <h6>ENDEREÇO</h6>
+            <span style="color:var(--c-muted); font-size:.85rem; line-height:1.4;">Av. Gisele Constantino, 1850<br>Votorantim / Sorocaba — SP</span>
+          </div>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul class="fl">
-          <li><a href="#hero">Início</a></li>
-          <li><a href="#about">Sobre Nós</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#gallery">Galeria</a></li>
-          <li><a href="#technology">Inovação</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Serviços</h4>
-        <ul class="fl">
-          <li><a href="#services">Fundações</a></li>
-          <li><a href="#services">Estruturas de Concreto</a></li>
-          <li><a href="#services">Gerenciamento de Obras</a></li>
-          <li><a href="#services">Projetos Estruturais</a></li>
-          <li><a href="#services">Consultoria Técnica</a></li>
-          <li><a href="#services">Laudos e Perícias</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contato</h4>
-        <div class="fci"><i class="fas fa-phone"></i><span>(00) 0000-0000</span></div>
-        <div class="fci"><i class="fab fa-whatsapp"></i><span>(00) 00000-0000</span></div>
-        <div class="fci"><i class="fas fa-envelope"></i><span>contato@concretaengenharia.com.br</span></div>
-        <div class="fci"><i class="fas fa-map-marker-alt"></i><span>Rua das Engenharias, 123<br>Centro — Cidade, UF</span></div>
+      <!-- Map -->
+      <div class="f-map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2045582377287!2d-47.46654872467069!3d-23.525164878825838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f59fa0fcd92d%3A0xe510b64d420cf677!2sAv.%20Gisele%20Constantino%20-%20Votorantim%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1719234000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" title="Localização Concreta Engenharia"></iframe>
       </div>
     </div>
 
+    <!-- Bottom bar -->
     <div class="footer-bottom">
-      <p>© 2024 Concreta Engenharia e Serviços Ltda. Todos os direitos reservados.</p>
+      <p>© 2026 Concreta Engenharia. Todos os direitos reservados.</p>
       <div class="fb-links">
         <a href="#">Política de Privacidade</a>
         <a href="#">Termos de Uso</a>
+      </div>
+      <div class="f-social-col">
+        <a href="https://www.instagram.com/cravatec.com.br" target="_blank" class="f-soc-v2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </div>
 </footer>
 
+<<<<<<< HEAD
 <a href="https://wa.me/5500000000000" class="wa-fab" aria-label="WhatsApp" target="_blank" rel="noopener">
+=======
+<a href="https://wa.me/5515996123456" class="wa-fab" aria-label="WhatsApp" target="_blank" rel="noopener">
+>>>>>>> a9d6408 (Apply final redesign to match Cravatec aesthetic, add ViaCEP integration, and fix responsive issues)
   <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -989,47 +984,38 @@
     });
   });
 
-  // Testimonials slider
-  const track = document.getElementById('testTrack');
-  const cards = track.querySelectorAll('.test-card');
-  let tIdx = 0;
-  function getVis() { return window.innerWidth>=1024?3: window.innerWidth>=700?2: 1; }
-  function updateTest() {
-    const vis = getVis(), w = track.parentElement.offsetWidth;
-    const cw = (w - (vis-1)*16) / vis;
-    cards.forEach(c => { c.style.flex='0 0 '+cw+'px'; c.style.margin='0 8px'; });
-    const max = Math.max(0, cards.length - vis);
-    if(tIdx>max) tIdx=max;
-    track.style.transform = 'translateX(-' + (tIdx*(cw+16)) + 'px)';
-  }
-  document.getElementById('prevTest').addEventListener('click', () => { if(tIdx>0){tIdx--;updateTest();} });
-  document.getElementById('nextTest').addEventListener('click', () => { const m=Math.max(0,cards.length-getVis()); if(tIdx<m){tIdx++;updateTest();} });
-  window.addEventListener('resize', updateTest, {passive:true});
-  updateTest();
-
   // Scroll reveal
   const ro = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); ro.unobserve(e.target); } });
   }, { threshold:.1, rootMargin:'0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-  // Counter
-  const co = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(!e.isIntersecting) return;
-      const el = e.target, end = parseInt(el.dataset.target,10), dur = 1800;
-      let s = null;
-      function tick(ts) {
-        if(!s) s=ts;
-        const p = Math.min((ts-s)/dur,1);
-        el.textContent = Math.floor(end*(1-Math.pow(1-p,3)));
-        if(p<1) requestAnimationFrame(tick); else el.textContent=end;
-      }
-      requestAnimationFrame(tick);
-      co.unobserve(el);
-    });
-  }, { threshold:.5 });
-  document.querySelectorAll('.counter').forEach(el => co.observe(el));
+  // CEP Auto-fill
+  const cepInput = document.getElementById('f-cep');
+  const addrInput = document.getElementById('f-address');
+  cepInput.addEventListener('input', () => {
+    const raw = cepInput.value.replace(/\D/g, '');
+    if (raw.length === 8) {
+      cepInput.value = raw.substring(0, 5) + '-' + raw.substring(5);
+      addrInput.value = 'Buscando endereço...';
+      addrInput.disabled = true;
+      fetch(`https://viacep.com.br/ws/${raw}/json/`)
+        .then(res => res.json())
+        .then(data => {
+          addrInput.disabled = false;
+          if (data.erro) {
+            addrInput.value = '';
+            alert('CEP não encontrado. Por favor, digite o endereço manualmente.');
+          } else {
+            addrInput.value = `${data.logradouro || ''}, ${data.bairro || ''} - ${data.localidade || ''}/${data.uf || ''}`;
+          }
+        })
+        .catch(() => {
+          addrInput.disabled = false;
+          addrInput.value = '';
+        });
+    }
+  });
 
   // Contact form
   const cf = document.getElementById('contactForm');
@@ -1040,6 +1026,17 @@
     fb.innerHTML = '<i class="fas fa-check"></i> MENSAGEM ENVIADA!';
     fb.classList.add('sent'); fb.disabled = true;
     setTimeout(() => { fb.innerHTML=orig; fb.classList.remove('sent'); fb.disabled=false; cf.reset(); }, 3500);
+  });
+
+  // Newsletter form
+  const nf = document.getElementById('newsForm');
+  nf.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = nf.querySelector('button');
+    const orig = btn.textContent;
+    btn.textContent = 'Enviado!';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent=orig; btn.disabled=false; nf.reset(); }, 3000);
   });
 
   // Smooth scroll offset
