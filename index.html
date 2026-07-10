@@ -727,8 +727,10 @@
       <!-- Right: Contact Form -->
       <div class="form-box reveal from-right">
         <h3 style="font-weight: 800; font-size: 1.4rem; margin-bottom: 24px;">Solicite seu Orçamento</h3>
-        <form id="contactForm" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
+        <form id="contactForm" action="https://formsubmit.co/concretaengenharia.ltda1@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Novo Orçamento - Concreta Engenharia">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://concretaengenharia.netlify.app/">
           <div class="frow">
             <div class="fg">
               <label for="f-name">Nome Completo *</label>
@@ -966,12 +968,9 @@
   // Contact form
   const cf = document.getElementById('contactForm');
   const fb = document.getElementById('fBtn');
-  cf.addEventListener('submit', e => {
-    e.preventDefault();
-    const orig = fb.innerHTML;
-    fb.innerHTML = '<i class="fas fa-check"></i> MENSAGEM ENVIADA!';
-    fb.classList.add('sent'); fb.disabled = true;
-    setTimeout(() => { fb.innerHTML=orig; fb.classList.remove('sent'); fb.disabled=false; cf.reset(); }, 3500);
+  cf.addEventListener('submit', () => {
+    fb.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ENVIANDO...';
+    fb.classList.add('sent');
   });
 
   // Newsletter form
