@@ -9,6 +9,7 @@
   <meta property="og:title" content="Concreta Engenharia | Construa o Futuro com a Gente">
   <meta property="og:description" content="Excelência em engenharia estrutural e construção civil desde o projeto até a entrega.">
 
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%233B6FF3'/><stop offset='100%25' stop-color='%230446F1'/></linearGradient></defs><polygon points='60,10 104,33 60,56 16,33' fill='url(%23g)'/><polygon points='104,33 104,79 60,102 60,56' fill='%231A5AF8'/><polygon points='16,33 16,79 60,102 60,56' fill='%230330B8'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Barlow:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -123,7 +124,7 @@
     .hero-slide.active{opacity:1;pointer-events:auto}
     .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.06);transition:transform 7s linear}
     .hero-slide.active .hero-bg{transform:scale(1)}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(108deg,rgba(5,10,32,.9) 0%,rgba(4,70,241,.18) 55%,rgba(0,0,0,.55) 100%)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(108deg,rgba(3,6,20,.95) 0%,rgba(4,70,241,.32) 50%,rgba(0,0,0,.75) 100%)}
     .hero-content{position:relative;z-index:2;max-width:700px}
     .hero-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(4,70,241,.18);border:1px solid rgba(4,70,241,.5);backdrop-filter:blur(12px);border-radius:100px;padding:7px 18px;font-size:.72rem;color:var(--c-accent);letter-spacing:.12em;font-family:var(--f-head);margin-bottom:26px}
     .pill-dot{width:7px;height:7px;border-radius:50%;background:var(--c-accent);animation:blink 2s infinite;flex-shrink:0}
@@ -652,7 +653,7 @@
         <div class="g-overlay"><div><h4>Residencial Premium</h4><span>Projeto e Execução</span></div></div>
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1590644365607-2d7c0bde5c0f?w=700&q=75" alt="Complexo comercial" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=75" alt="Complexo comercial" loading="lazy">
         <div class="g-overlay"><div><h4>Complexo Comercial</h4><span>Estruturas Especiais</span></div></div>
       </div>
     </div>
@@ -935,9 +936,13 @@
   </div>
 </footer>
 
-<a href="https://wa.me/5500000000000" class="wa-fab" aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+<a href="https://wa.me/5500000000000" class="wa-fab" aria-label="WhatsApp" target="_blank" rel="noopener">
   <i class="fab fa-whatsapp"></i>
 </a>
+
+<button class="back-top" id="backTop" aria-label="Voltar ao topo">
+  <i class="fas fa-chevron-up"></i>
+</button>
 
 <script>
   // Navbar scroll
