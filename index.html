@@ -73,7 +73,7 @@
     /* ════════════════════════════
        TOP BAR
     ════════════════════════════ */
-    .topbar{background:var(--c-dark2);height:var(--topbar-h);display:flex;align-items:center;border-bottom:1px solid rgba(4,70,241,.25);position:relative;z-index:100}
+    .topbar{background:var(--c-dark2);height:var(--topbar-h);display:flex;align-items:center;border-bottom:1px solid rgba(4,70,241,.25);position:relative;z-index:100;overflow:hidden}
     .topbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .tb-contacts{display:flex;align-items:center;gap:20px}
     .tb-contacts a{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--c-gray);transition:var(--t)}
@@ -310,6 +310,11 @@
     .wa-fab:hover{transform:scale(1.12);box-shadow:0 8px 36px rgba(37,211,102,.55)}
     @keyframes pfab{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,.4)}50%{box-shadow:0 4px 44px rgba(37,211,102,.7)}}
 
+    /* Back to top */
+    .back-top{position:fixed;bottom:100px;right:28px;z-index:8999;width:44px;height:44px;border-radius:50%;background:var(--c-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;box-shadow:0 4px 18px var(--c-glow);opacity:0;pointer-events:none;transition:var(--t);border:none;cursor:pointer}
+    .back-top.visible{opacity:1;pointer-events:auto}
+    .back-top:hover{background:var(--c-primary-dark);transform:translateY(-3px)}
+
     /* ════════════════════════════
        RESPONSIVE
     ════════════════════════════ */
@@ -321,27 +326,41 @@
       .nav-links{display:none}
       .nav-burger{display:flex}
       .srv-panel.active{grid-template-columns:1fr}
-      .srv-img{height:280px}
+      .srv-img{height:300px;width:100%}
       .srv-body{padding:32px 28px}
       .about-grid{grid-template-columns:1fr;gap:48px}
-      .about-photos{height:380px}
+      .about-photos{height:400px}
       .gallery-grid{grid-template-columns:repeat(2,1fr)}
       .tech-grid{grid-template-columns:1fr 1fr}
       .stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
       .test-card{flex:0 0 calc(50% - 11px)}
       .contact-grid{grid-template-columns:1fr;gap:48px}
       .form-box{padding:32px 24px}
+      .hero-actions{flex-direction:column;gap:10px}
+      .hero-actions .btn{width:100%;justify-content:center}
     }
     @media(max-width:600px){
-      .tb-contacts{display:none}
+      .topbar{display:none}
       .gallery-grid{grid-template-columns:1fr}
-      .about-cards{grid-template-columns:1fr}
+      .about-cards{grid-template-columns:1fr 1fr}
       .test-card{flex:0 0 calc(100% - 11px)}
       .footer-grid{grid-template-columns:1fr}
       .footer-bottom{flex-direction:column;text-align:center}
       .frow{grid-template-columns:1fr}
       .scroll-hint{display:none}
-      .hero-title{font-size:1.9rem}
+      .hero-title{font-size:2rem}
+      .stats-grid{grid-template-columns:repeat(2,1fr)}
+      .tech-grid{grid-template-columns:1fr}
+      #services{padding:60px 0}
+      #about,#gallery,#technology,#stats,#testimonials,#cta,#contact{padding:70px 0}
+      .srv-tabs{gap:6px}
+      .srv-tab{padding:9px 14px;font-size:.8rem}
+      .cta-inner h2{font-size:1.6rem}
+    }
+    @media(max-width:380px){
+      .about-cards{grid-template-columns:1fr}
+      .hero-title{font-size:1.75rem}
+      .stat-num{font-size:2.2rem}
     }
   </style>
 </head>
@@ -613,27 +632,27 @@
     </div>
     <div class="gallery-grid reveal">
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=75" alt="Fundação em radier" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=75" alt="Fundação em radier" loading="lazy">
         <div class="g-overlay"><div><h4>Fundação em Radier</h4><span>Projeto Estrutural</span></div></div>
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1590012314253-3bc5e91b1e43?w=700&q=75" alt="Estrutura em concreto" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75" alt="Estrutura em concreto" loading="lazy">
         <div class="g-overlay"><div><h4>Estrutura em Concreto</h4><span>Gerenciamento de Obras</span></div></div>
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=75" alt="Projeto executivo" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=700&q=75" alt="Projeto executivo" loading="lazy">
         <div class="g-overlay"><div><h4>Projeto Executivo</h4><span>Consultoria Técnica</span></div></div>
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=700&q=75" alt="Canteiro de obras" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=700&q=75" alt="Canteiro de obras" loading="lazy">
         <div class="g-overlay"><div><h4>Canteiro de Obras</h4><span>Acompanhamento Técnico</span></div></div>
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=75" alt="Residencial premium" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&q=75" alt="Residencial premium" loading="lazy">
         <div class="g-overlay"><div><h4>Residencial Premium</h4><span>Projeto e Execução</span></div></div>
       </div>
       <div class="g-item">
-        <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=700&q=75" alt="Complexo comercial" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1590644365607-2d7c0bde5c0f?w=700&q=75" alt="Complexo comercial" loading="lazy">
         <div class="g-overlay"><div><h4>Complexo Comercial</h4><span>Estruturas Especiais</span></div></div>
       </div>
     </div>
@@ -1025,6 +1044,10 @@
       if(t){ e.preventDefault(); window.scrollTo({top: t.offsetTop - navbar.offsetHeight - 16, behavior:'smooth'}); }
     });
   });
+  // Back to top
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => { backTop.classList.toggle('visible', window.scrollY > 500); }, {passive:true});
+  backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 </script>
 </body>
 </html>
