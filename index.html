@@ -413,7 +413,7 @@
   <div class="hero-slider" id="heroSlider">
 
     <div class="hero-slide active">
-      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85')"></div>
+      <div class="hero-bg" style="background-image:url('https://www.cravatec.com.br/admin/assets/imgs/banner/grande/4a01cd47a52325d6e70a5ec309b47c65-bnrot.jpeg')"></div>
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
@@ -435,7 +435,7 @@
     </div>
 
     <div class="hero-slide">
-      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1590012314253-3bc5e91b1e43?w=1920&q=85')"></div>
+      <div class="hero-bg" style="background-image:url('https://www.cravatec.com.br/admin/assets/imgs/banner/grande/7b1760de1617804fa061d6ccc3605684-1.jpeg')"></div>
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
@@ -456,7 +456,7 @@
     </div>
 
     <div class="hero-slide">
-      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85')"></div>
+      <div class="hero-bg" style="background-image:url('https://www.cravatec.com.br/admin/assets/imgs/banner/grande/b64e04e66a139cbce674b3b324d3ea8e-3.jpeg')"></div>
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-content">
@@ -727,31 +727,32 @@
       <!-- Right: Contact Form -->
       <div class="form-box reveal from-right">
         <h3 style="font-weight: 800; font-size: 1.4rem; margin-bottom: 24px;">Solicite seu Orçamento</h3>
-        <form id="contactForm">
+        <form id="contactForm" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <div class="frow">
             <div class="fg">
               <label for="f-name">Nome Completo *</label>
-              <input type="text" id="f-name" placeholder="Seu nome" required>
+              <input type="text" id="f-name" name="nome" placeholder="Seu nome" required>
             </div>
             <div class="fg">
               <label for="f-phone">WhatsApp *</label>
-              <input type="tel" id="f-phone" placeholder="(00) 00000-0000" required>
+              <input type="tel" id="f-phone" name="whatsapp" placeholder="(00) 00000-0000" required>
             </div>
           </div>
           <div class="frow">
             <div class="fg">
               <label for="f-email">E-mail *</label>
-              <input type="email" id="f-email" placeholder="seu@email.com" required>
+              <input type="email" id="f-email" name="email" placeholder="seu@email.com" required>
             </div>
             <div class="fg">
               <label for="f-cep">CEP *</label>
-              <input type="text" id="f-cep" placeholder="00000-000" maxlength="9" required>
+              <input type="text" id="f-cep" name="cep" placeholder="00000-000" maxlength="9" required>
             </div>
           </div>
           <div class="frow">
             <div class="fg" style="grid-column: span 2;">
               <label for="f-address">Endereço / Cidade / Estado *</label>
-              <input type="text" id="f-address" placeholder="Preenchido automaticamente pelo CEP" required>
+              <input type="text" id="f-address" name="endereco" placeholder="Preenchido automaticamente pelo CEP" required>
             </div>
           </div>
           
@@ -791,7 +792,7 @@
 
           <div class="fg">
             <label for="f-msg">Mensagem / Detalhes da obra</label>
-            <textarea id="f-msg" placeholder="Descreva sua obra, dimensões do terreno, etc..."></textarea>
+            <textarea id="f-msg" name="mensagem" placeholder="Descreva sua obra, dimensões do terreno, etc..."></textarea>
           </div>
           <button type="submit" class="form-submit" id="fBtn">
             <i class="fas fa-paper-plane"></i>ENVIAR ORÇAMENTO
